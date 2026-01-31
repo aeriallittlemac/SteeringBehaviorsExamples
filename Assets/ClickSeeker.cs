@@ -17,6 +17,7 @@ public class ClickSeeker : MonoBehaviour
         if (breakingForce > 0)
         {
             breaker = new Breaker(rb, breakingForce);
+            so.AddSteeringBehavior(breaker);
         }
     }
 
