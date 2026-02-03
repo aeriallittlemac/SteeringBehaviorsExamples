@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [System.Serializable]
-public class Breaker : SteeringBehavior
+public class Breaker:SteeringBehavior
 {
     private Rigidbody rb;
     private float breakingForce;
