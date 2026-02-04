@@ -33,4 +33,9 @@ public class Flee : SteeringBehavior
             return Vector3.zero;
         }
     }
+
+    public void deactivate()
+    {
+        unset = true;
+    }
 }
