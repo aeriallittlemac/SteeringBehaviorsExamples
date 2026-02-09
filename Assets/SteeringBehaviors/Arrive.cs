@@ -6,7 +6,7 @@ public class Arriver: SteeringBehavior {
     bool unset = true;
     Rigidbody rb;
     int decelerationConstant;
-    private float tweaker = 1.7f;
+    public float tweaker = 1.7f;
 	
     public Arriver(Rigidbody rb,int decelerationConstant,float tweaker = 1.7f )
     {
@@ -27,7 +27,7 @@ public class Arriver: SteeringBehavior {
         Debug.Log("Enter Calculating arrival force");
         if (!unset)
         {
-            Debug.Log("Calculating arrival force");
+            //Debug.Log("Calculating arrival force");
             Vector3 toTarget = targetPosition - rb.position;
             float distance = toTarget.magnitude;
             if (distance>0){
@@ -35,7 +35,7 @@ public class Arriver: SteeringBehavior {
                 speed = speed>maxVelocity?maxVelocity:speed;
                 Vector3 desiredVelocity = toTarget  * speed / distance;
                 Vector3 result = desiredVelocity - rb.velocity;
-                Debug.Log("Force = " + result.ToString() + "");
+                //Debug.Log("Force = " + result.ToString() + "");
                 return result;
             } else {
                 return new Vector3(0, 0, 0);

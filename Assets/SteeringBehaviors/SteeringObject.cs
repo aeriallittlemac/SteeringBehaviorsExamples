@@ -16,7 +16,7 @@ public class SteeringObject : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 steeringForce = new Vector3(0, 0, 0);
         foreach (SteeringBehavior steeringBehavior in steeringBehaviors)

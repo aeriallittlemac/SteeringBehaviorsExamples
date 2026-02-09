@@ -5,6 +5,7 @@ public class Seeker : SteeringBehavior {
     Vector3 targetPosition;
     bool unset = true;
     Rigidbody rb;
+    public float tweaker = 1.0f;
 
 	
     public Seeker(Rigidbody rb)
@@ -25,7 +26,7 @@ public class Seeker : SteeringBehavior {
             Vector3 currentPosition = rb.position;
             Vector3 desiredVelocity =
                 (targetPosition - currentPosition).normalized * maxVelocity;
-            Vector3 result = desiredVelocity - rb.velocity;
+            Vector3 result = (desiredVelocity - rb.velocity)*tweaker;
             return result;
         }
         else
