@@ -19,21 +19,14 @@ public class SteeringObject : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 steeringForce = new Vector3(0, 0, 0);
-        foreach (SteeringBehavior steeringBehavior in steeringBehaviors)
+        foreach (SteeringBehavior steeringBehavior in 
+                 GetComponentsInChildren<SteeringBehavior>())
         {
             steeringForce = steeringForce + steeringBehavior.CalculateSteeringForce(maxVelocity);
         }
         GetComponent<Rigidbody>().AddForce(steeringForce);
     }
 
-    public void AddSteeringBehavior(SteeringBehavior sb)
-    {
-        steeringBehaviors.Add(sb);
-    }
-
-    public void RemoveSteeringBehavior(SteeringBehavior sb)
-    {
-        steeringBehaviors.Remove(sb);
-    }
+    
 
 }

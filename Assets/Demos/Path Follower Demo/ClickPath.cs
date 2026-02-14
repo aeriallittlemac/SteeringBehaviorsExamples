@@ -11,9 +11,12 @@ public class ClickPath : MonoBehaviour
     void Start()
     {
         steeringObject = GetComponent<SteeringObject>();
-        pathBehavior = gameObject.AddComponent<PathFollower>();
-        pathBehavior.rb = GetComponent<Rigidbody>();
-        steeringObject.AddSteeringBehavior(pathBehavior);
+        pathBehavior = GetComponent<PathFollower>();
+        if (pathBehavior == null)
+        {
+            pathBehavior = gameObject.AddComponent<PathFollower>();
+            pathBehavior.rb = GetComponent<Rigidbody>();
+        }
     }
 
     // Update is called once per frame

@@ -12,7 +12,6 @@ public class Phobic : MonoBehaviour
     {
         fleeBehavior = gameObject.AddComponent<Flee>();
         fleeBehavior.rb = GetComponent<Rigidbody>();
-        GetComponent<SteeringObject>().AddSteeringBehavior(fleeBehavior);
     }
 
     // Update is called once per frame

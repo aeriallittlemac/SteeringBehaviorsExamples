@@ -11,9 +11,12 @@ public class ClickFlee : MonoBehaviour
     {
         Rigidbody rb = GetComponent<Rigidbody>();
         SteeringObject so = GetComponent<SteeringObject>();
-        fleeBehavior = gameObject.AddComponent<Flee>();
-        fleeBehavior.rb = rb;
-        so.AddSteeringBehavior(fleeBehavior);
+        fleeBehavior = GetComponent<Flee>();
+        if (fleeBehavior == null)
+        {
+            fleeBehavior = gameObject.AddComponent<Flee>();
+            fleeBehavior.rb = rb;
+        }
     }
 
     // Update is called once per frame
