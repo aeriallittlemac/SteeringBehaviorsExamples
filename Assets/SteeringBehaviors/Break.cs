@@ -1,16 +1,19 @@
 ﻿using UnityEngine;
 
-public class Breaker : SteeringBehavior
+[System.Serializable]
+public class Breaker:SteeringBehavior
 {
-    public Rigidbody rb;
-    public float breakingForce = 50f; // Default value or just public
+    private Rigidbody rb;
+    private float breakingForce;
 
-    public void Awake()
+    // Constructor used in your ClickSeeker: new breaker(rb, breakingForce)
+    public Breaker(Rigidbody rigidbody, float force)
     {
-        rb = GetComponent<Rigidbody>();
+        this.rb = rigidbody;
+        this.breakingForce = force;
     }
 
-    public override Vector3 CalculateSteeringForce(float maxVelocity)
+    public Vector3 CalculateSteeringForce(float maxVelocity)
     {
         // 1. If we aren't moving, don't apply any force
         if (rb.velocity.magnitude < 0.01f)
