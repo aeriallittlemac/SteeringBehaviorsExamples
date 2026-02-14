@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wander : SteeringBehavior
+public class Wander : MonoBehaviour, SteeringBehavior
 {
     private Vector3 wanderTarget = Vector3.zero;
     public float wanderRadius = 8f;
-    private Rigidbody rb;
+    public Rigidbody rb;
     public float wanderDistance = 5f;
     public float wanderJitter = 25f;
     public float startingVelocity = 1.0f;
 
-    public Wander(GameObject obj)
+    public void Awake()
     {
         wanderTarget = new Vector3(0, 0, wanderRadius);
-        rb = obj.GetComponent<Rigidbody>();
+        if (rb == null) rb = GetComponent<Rigidbody>();
         rb.AddForce(new Vector3(0,0,startingVelocity));
     }
 

@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Seeker : SteeringBehavior {
+public class Seeker : MonoBehaviour, SteeringBehavior {
     Vector3 targetPosition;
     bool unset = true;
-    Rigidbody rb;
+    public Rigidbody rb;
     public float tweaker = 1.0f;
 
 	
-    public Seeker(Rigidbody rb)
+    public void Awake()
     {
-        this.rb = rb;
+        if (rb == null) rb = GetComponent<Rigidbody>();
     }
 
     public void SetSeekPosition(Vector3 targetPosition)

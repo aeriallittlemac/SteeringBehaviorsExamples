@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Arriver: SteeringBehavior {
+public class Arriver: MonoBehaviour, SteeringBehavior {
     Vector3 targetPosition;
     bool unset = true;
-    Rigidbody rb;
-    int decelerationConstant;
+    public Rigidbody rb;
+    public int decelerationConstant = 3;
     public float tweaker = 1.7f;
 	
-    public Arriver(Rigidbody rb,int decelerationConstant,float tweaker = 1.7f )
+    public void Awake()
     {
-        this.rb = rb;
-        this.decelerationConstant = decelerationConstant;
-        this.tweaker = tweaker;
+        if (rb == null) rb = GetComponent<Rigidbody>();
     }
 
     public void SetArrivalPosition(Vector3 targetPosition)

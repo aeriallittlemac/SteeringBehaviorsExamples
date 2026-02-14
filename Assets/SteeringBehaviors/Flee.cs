@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flee : SteeringBehavior
+public class Flee : MonoBehaviour, SteeringBehavior
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
     private bool unset = true;
     private Vector3 targetPosition;
-    public Flee(Rigidbody rb)
+    public void Awake()
     {
-        this.rb = rb;
+        if (rb == null) rb = GetComponent<Rigidbody>();
     }
 
     public void setFearedPosition(Vector3 targetPosition)

@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PathFollower : SteeringBehavior
+public class PathFollower : MonoBehaviour, SteeringBehavior
 {
-    private Seeker seeker;
-    private Arriver arriver;
-    private Rigidbody rb;
+    public Seeker seeker;
+    public Arriver arriver;
+    public Rigidbody rb;
     public float targetDistance = 1.0f;
     private Queue<Vector3> pathQueue = new Queue<Vector3>();
     private Vector3 currentTarget;
     
     private SteeringBehavior currentBehavior=null;
     // Start is called before the first frame update
-    public PathFollower(Rigidbody rb)
+    public void Awake()
     {
-        this.rb = rb;
-        seeker = new Seeker(rb);
+        if (rb == null) rb = GetComponent<Rigidbody>();
+        if (seeker == null) seeker = GetComponent<Seeker>();
+        if (seeker == null) seeker = gameObject.AddComponent<Seeker>();
         seeker.tweaker = 3.0f;
-        arriver = new Arriver(rb, 3);
+        
+        if (arriver == null) arriver = GetComponent<Arriver>();
+        if (arriver == null) arriver = gameObject.AddComponent<Arriver>();
+        arriver.decelerationConstant = 3;
     }
 
     public void AddDestination(Vector3 destination)

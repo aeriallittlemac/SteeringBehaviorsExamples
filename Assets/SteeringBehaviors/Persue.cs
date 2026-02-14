@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Persue : SteeringBehavior
+public class Persue : MonoBehaviour, SteeringBehavior
 {
     private GameObject _target;
     public GameObject target
@@ -23,18 +23,18 @@ public class Persue : SteeringBehavior
 
     private Transform targetTransform;
     private Rigidbody targetRB;
-    private Transform xform;
+    public Transform xform;
     public float velocityTweak=1.0f;
     public float predictionWindow = 5;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private bool unset = true;
    
 
     // Start is called before the first frame update
-    public Persue(GameObject obj)
+    public void Awake()
     {
-        rb = obj.GetComponent<Rigidbody>();
-        xform = obj.GetComponent<Transform>();
+        if (rb == null) rb = GetComponent<Rigidbody>();
+        if (xform == null) xform = GetComponent<Transform>();
     }
 
     

@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleAvoider : SteeringBehavior
+public class ObstacleAvoider : MonoBehaviour, SteeringBehavior
 {
     public float boundingRadius;
-    private GameObject gameObj;
-    private Rigidbody rb;
-    private Transform objXform;
-    private Renderer renderer;
+    public GameObject gameObj;
+    public Rigidbody rb;
+    public Transform objXform;
+    public Renderer renderer;
     
-    public ObstacleAvoider(GameObject myGameObject)
+    public void Awake()
     {
-        gameObj = myGameObject;
-        rb = gameObj.GetComponent<Rigidbody>();
-        objXform = gameObj.GetComponent<Transform>();
-        renderer = gameObj.GetComponent<Renderer>();
+        if (gameObj == null) gameObj = gameObject;
+        if (rb == null) rb = gameObj.GetComponent<Rigidbody>();
+        if (objXform == null) objXform = gameObj.GetComponent<Transform>();
+        if (renderer == null) renderer = gameObj.GetComponent<Renderer>();
         // find the largest dimentsion of the GameObject
         boundingRadius = (renderer.bounds.size.x > renderer.bounds.size.y) ?
             renderer.bounds.size.x : renderer.bounds.size.y;
