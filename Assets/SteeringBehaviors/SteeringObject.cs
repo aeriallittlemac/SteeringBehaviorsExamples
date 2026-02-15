@@ -8,16 +8,19 @@ public class SteeringObject : MonoBehaviour
     public float maxVelocity = 3.0f;
 
     public SteeringBehavior[] steeringBehaviors;
+   
+
         
     // Start is called before the first frame update
     void Start()
     {
-        //nop
+       
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+       
         steeringBehaviors = GetComponents<SteeringBehavior>();
         Vector3 steeringForce = new Vector3(0, 0, 0);
         foreach (SteeringBehavior steeringBehavior in steeringBehaviors)
