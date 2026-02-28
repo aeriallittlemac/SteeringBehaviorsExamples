@@ -122,6 +122,75 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &74943868 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+  m_PrefabInstance: {fileID: 1597805664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &74943878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74943868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1cc6a006dadf343b0068dedda59f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xform: {fileID: 0}
+  velocityTweak: 1
+  predictionWindow: 5
+  rb: {fileID: 0}
+--- !u!114 &74943879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74943868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ae38c629474ee4c9db73f4f7af3d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+--- !u!114 &74943880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74943868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b802fd57635f142b262eeb754e6f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 8
+  wanderDistance: 5
+  wanderJitter: 25
+  startingVelocity: 1
+  evaded: {fileID: 7059834828117289623, guid: 753aaee2d6972cc47bcace80d7e0d058, type: 3}
+--- !u!114 &74943888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 74943868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e77700ab5e35145bf17019aef8add1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boundingRadius: 0
+  gameObj: {fileID: 0}
+  rb: {fileID: 0}
+  objXform: {fileID: 0}
+  renderer: {fileID: 0}
+  velocityMult: 2
 --- !u!1 &109888529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1997,14 @@ PrefabInstance:
       propertyPath: gameOverText
       value: 
       objectReference: {fileID: 778002684}
+    - target: {fileID: -4633212803809884236, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4633212803809884236, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      propertyPath: steeringBehaviors.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4006447673907411420, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5577389
@@ -1975,7 +2052,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74943878}
+    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74943879}
+    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74943880}
+    - targetCorrespondingSourceObject: {fileID: 7059834828117289623, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 74943888}
   m_SourcePrefab: {fileID: 100100000, guid: 97e9014ff8b7da94084a4ef2083bd63f, type: 3}
 --- !u!1 &1649422495
 GameObject:

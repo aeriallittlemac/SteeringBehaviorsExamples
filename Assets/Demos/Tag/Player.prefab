@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 2075874198624293647}
   - component: {fileID: -6566747133427614690}
   - component: {fileID: -4633212803809884236}
-  - component: {fileID: 2645196990248124761}
   - component: {fileID: -6343912597935838708}
   m_Layer: 0
   m_Name: Player
@@ -151,23 +150,6 @@ MonoBehaviour:
   maxForce: 1
   maxVelocity: 3
   steeringBehaviors: []
---- !u!114 &2645196990248124761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7059834828117289623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1314abc70e8564f8312dfb63f24887, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wanderRadius: 8
-  rb: {fileID: 0}
-  wanderDistance: 5
-  wanderJitter: 25
-  startingVelocity: 1
 --- !u!114 &-6343912597935838708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,4 +165,6 @@ MonoBehaviour:
   it_material: {fileID: 2100000, guid: 6ee276e88eab9e6498a9dde4c6f7c5a8, type: 2}
   notit_material: {fileID: 2100000, guid: e6c1bf9b6448fe14db0f586eb9b90946, type: 2}
   scoreText: {fileID: 0}
+  gameOverText: {fileID: 0}
+  playTime: 60
   isIt: 1
